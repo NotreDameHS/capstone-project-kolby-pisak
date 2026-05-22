@@ -9,6 +9,7 @@ height = 16.0
 
 [node name="Player" type="Area2D" unique_id=2090712072]
 script = ExtResource("1_symyc")
+steering_factor = 50.0
 
 [node name="Timer" type="Timer" parent="." unique_id=1135635364]
 
