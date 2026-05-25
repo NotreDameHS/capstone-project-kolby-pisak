@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dcksnx4k5yhrp"]
+
+[ext_resource type="Texture2D" uid="uid://dqsltle0g2pqr" path="res://assets/textures/Bullet.png" id="1_mt7h7"]
+[ext_resource type="Script" uid="uid://u1dfek65hs37" path="res://entities/weapons/bullet.gd" id="2_6qime"]
+
+[node name="Bullet" type="Sprite2D" unique_id=625636107]
+texture_filter = 1
+scale = Vector2(10, 10)
+texture = ExtResource("1_mt7h7")
+script = ExtResource("2_6qime")
+
+[node name="RayCast2D" type="RayCast2D" parent="." unique_id=1720074096]
+target_position = Vector2(1, 0)
+
+[node name="Timer" type="Timer" parent="." unique_id=249023470]
+wait_time = 10.0
+one_shot = true
+autostart = true

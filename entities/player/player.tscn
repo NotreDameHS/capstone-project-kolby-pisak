@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://cjvqm1qwpcrio" path="res://player.gd" id="1_symyc"]
 [ext_resource type="Texture2D" uid="uid://c4yvgl5axx3t3" path="res://assets/textures/roguelikeChar_transparent.png" id="2_abrql"]
-[ext_resource type="Texture2D" uid="uid://c7mohidmbs208" path="res://assets/textures/1 Icons/Icon29_31.png" id="3_sglur"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_abrql"]
 radius = 7.0
@@ -21,20 +20,3 @@ region_rect = Rect2(0, 104, 16, 14)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1131672052]
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_abrql")
-
-[node name="Weapon" type="Node2D" parent="." unique_id=136163759]
-
-[node name="RotationOffset" type="Node2D" parent="Weapon" unique_id=916320992]
-
-[node name="WeaponSprite" type="Sprite2D" parent="Weapon/RotationOffset" unique_id=403488712]
-texture_filter = 1
-rotation = 0.7853982
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("3_sglur")
-region_rect = Rect2(901, 1, 5, 15)
-
-[node name="ShootPos" type="Marker2D" parent="Weapon/RotationOffset" unique_id=1208783548]
-position = Vector2(3.25, -0.5)
-
-[node name="ShootTimer" type="Timer" parent="Weapon/RotationOffset" unique_id=1890134839]
-one_shot = true

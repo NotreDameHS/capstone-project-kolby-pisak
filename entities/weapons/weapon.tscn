@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://bk1si7xjb1vuw"]
+
+[ext_resource type="Texture2D" uid="uid://c7mohidmbs208" path="res://assets/textures/1 Icons/Icon29_31.png" id="1_c8oyq"]
+[ext_resource type="Script" uid="uid://cmp2mjll2mna4" path="res://entities/player/weapon.gd" id="1_mky6i"]
+
+[node name="Weapon" type="Node2D" unique_id=538520456]
+script = ExtResource("1_mky6i")
+
+[node name="RotationOffset" type="Node2D" parent="." unique_id=525189103]
+
+[node name="WeaponSprite" type="Sprite2D" parent="RotationOffset" unique_id=631445411]
+texture_filter = 1
+rotation = 0.7853982
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_c8oyq")
+region_rect = Rect2(901, 1, 5, 15)
+
+[node name="ShootPos" type="Marker2D" parent="RotationOffset/WeaponSprite" unique_id=1085281347]
+position = Vector2(9.722718, -13.258252)
+rotation = -0.7853982
+scale = Vector2(5, 5)
+
+[node name="ShootTimer" type="Timer" parent="." unique_id=1599519292]
+one_shot = true
+
+[connection signal="timeout" from="ShootTimer" to="." method="_on_shoot_timer_timeout"]
