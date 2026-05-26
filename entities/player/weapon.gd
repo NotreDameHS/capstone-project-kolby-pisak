@@ -1,13 +1,32 @@
-extends Node2D
+extends Area2D
 
 const bullet_scene = preload("res://entities/weapons/bullet.tscn")
 
+#Weapon Variables
 @onready var RotationOffset = $RotationOffset
 @onready var ShootPos = $RotationOffset/WeaponSprite/ShootPos
 @onready var ShootTimer = $ShootTimer
 
 var time_between_shot: float = 0.25
 var can_shoot: bool = true
+
+#Player Variables
+@export var max_speed := 600.0
+@export var health := 100
+
+var velocity := Vector2(0, 0)
+
+func _process(delta: float) -> void:
+	var direction := Vector2(0, 0)
+	direction.x = Input.get_axis("move_left", "move_right")
+	direction.y = Input.get_axis("move_up", "move_down")
+
+	# If the vector is longer than 1 (diagonal), shrink it back to 1
+	if direction.length() > 1.0:
+		direction = direction.normalized()
+
+	velocity = direction * max_speed
+	position += velocity * delta
 
 func _ready() -> void:
 	ShootTimer.wait_time = time_between_shot

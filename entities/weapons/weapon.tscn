@@ -2,16 +2,23 @@
 
 [ext_resource type="Texture2D" uid="uid://c7mohidmbs208" path="res://assets/textures/1 Icons/Icon29_31.png" id="1_c8oyq"]
 [ext_resource type="Script" uid="uid://cmp2mjll2mna4" path="res://entities/player/weapon.gd" id="1_mky6i"]
+[ext_resource type="Texture2D" uid="uid://c4yvgl5axx3t3" path="res://assets/textures/roguelikeChar_transparent.png" id="3_der65"]
 
-[node name="Weapon" type="Node2D" unique_id=538520456]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_l8a67"]
+radius = 7.0
+height = 16.0
+
+[node name="Weapon" type="Area2D" unique_id=1061514725]
 script = ExtResource("1_mky6i")
 
 [node name="RotationOffset" type="Node2D" parent="." unique_id=525189103]
 
 [node name="WeaponSprite" type="Sprite2D" parent="RotationOffset" unique_id=631445411]
+z_index = 1
 texture_filter = 1
+position = Vector2(35, 5)
 rotation = 0.7853982
-scale = Vector2(0.2, 0.2)
+scale = Vector2(2, 2)
 texture = ExtResource("1_c8oyq")
 region_rect = Rect2(901, 1, 5, 15)
 
@@ -22,5 +29,17 @@ scale = Vector2(5, 5)
 
 [node name="ShootTimer" type="Timer" parent="." unique_id=1599519292]
 one_shot = true
+
+[node name="PlayerSprite" type="Sprite2D" parent="." unique_id=1067686191]
+texture_filter = 1
+scale = Vector2(5, 5)
+texture = ExtResource("3_der65")
+region_enabled = true
+region_rect = Rect2(0, 104, 16, 14)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1939285448]
+rotation = 1.5707964
+scale = Vector2(5, 5)
+shape = SubResource("CapsuleShape2D_l8a67")
 
 [connection signal="timeout" from="ShootTimer" to="." method="_on_shoot_timer_timeout"]
