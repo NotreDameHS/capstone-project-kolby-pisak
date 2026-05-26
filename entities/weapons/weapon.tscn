@@ -37,6 +37,8 @@ texture = ExtResource("3_der65")
 region_enabled = true
 region_rect = Rect2(0, 104, 16, 14)
 
+[node name="Camera2D" type="Camera2D" parent="PlayerSprite" unique_id=1622264305]
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1939285448]
 rotation = 1.5707964
 scale = Vector2(5, 5)
