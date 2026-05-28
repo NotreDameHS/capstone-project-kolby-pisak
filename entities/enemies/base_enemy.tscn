@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://cycb80uvlej7j"]
+
+[ext_resource type="Script" uid="uid://dh2q63a3f7r0x" path="res://entities/enemies/base_enemy.gd" id="1_20vb3"]
+[ext_resource type="Texture2D" uid="uid://dlg3bn52uwjc" path="res://assets/textures/Enemies/Base Enemy.png" id="2_nwpjw"]
+
+[node name="Base Enemy" type="CharacterBody2D" unique_id=1101038444]
+collision_layer = 2
+script = ExtResource("1_20vb3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1458872645]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=402550716]
+texture_filter = 1
+texture = ExtResource("2_nwpjw")

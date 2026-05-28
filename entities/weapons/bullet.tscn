@@ -12,6 +12,7 @@ script = ExtResource("2_6qime")
 [node name="RayCast2D" type="RayCast2D" parent="." unique_id=1720074096]
 position = Vector2(-1, 0)
 target_position = Vector2(3, 0)
+collision_mask = 2
 hit_from_inside = true
 
 [node name="Timer" type="Timer" parent="." unique_id=249023470]
