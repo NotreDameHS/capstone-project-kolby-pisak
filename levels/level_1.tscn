@@ -1,5 +1,6 @@
 [gd_scene format=4 uid="uid://cgx1ct5ms4vw4"]
 
+[ext_resource type="Script" uid="uid://cij2y18j3cwvt" path="res://levels/level_1.gd" id="1_bt44k"]
 [ext_resource type="Texture2D" uid="uid://looqn5i1c1x6" path="res://assets/textures/kenney_tiny-town/Tilemap/tilemap_packed.png" id="1_vn7o3"]
 [ext_resource type="PackedScene" uid="uid://bk1si7xjb1vuw" path="res://entities/weapons/weapon.tscn" id="2_jirdo"]
 
@@ -293,6 +294,9 @@ texture = ExtResource("1_vn7o3")
 sources/0 = SubResource("TileSetAtlasSource_bt44k")
 
 [node name="Level" type="Node2D" unique_id=1956120121]
+script = ExtResource("1_bt44k")
+metadata/_edit_horizontal_guides_ = [-2247.0, -2250.0, 2102.0, 2102.0, 2102.0]
+metadata/_edit_vertical_guides_ = [-4000.0, -3980.0, 3694.0, 3680.0]
 
 [node name="Level1 Base Layer" type="TileMapLayer" parent="." unique_id=336908163]
 texture_filter = 1
