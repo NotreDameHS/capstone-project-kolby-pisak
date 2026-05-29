@@ -7,7 +7,21 @@
 radius = 8.0
 height = 18.0
 
-[node name="Base Enemy" type="CharacterBody2D" unique_id=1101038444]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nwpjw"]
+bg_color = Color(0.08474, 0.08474, 0.08474, 0.42745098)
+corner_radius_top_left = 1
+corner_radius_top_right = 1
+corner_radius_bottom_right = 1
+corner_radius_bottom_left = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ocmy6"]
+bg_color = Color(0.6928123, 0.15680745, 0.22612298, 1)
+corner_radius_top_left = 1
+corner_radius_top_right = 1
+corner_radius_bottom_right = 1
+corner_radius_bottom_left = 1
+
+[node name="BaseEnemy" type="CharacterBody2D" unique_id=1101038444]
 collision_layer = 2
 script = ExtResource("1_20vb3")
 
@@ -18,3 +32,12 @@ shape = SubResource("CapsuleShape2D_nwpjw")
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=402550716]
 texture_filter = 1
 texture = ExtResource("2_nwpjw")
+
+[node name="HealthBar" type="ProgressBar" parent="." unique_id=368831279]
+offset_left = -6.0
+offset_top = -12.0
+offset_right = 6.0
+offset_bottom = -8.0
+theme_override_styles/background = SubResource("StyleBoxFlat_nwpjw")
+theme_override_styles/fill = SubResource("StyleBoxFlat_ocmy6")
+show_percentage = false
