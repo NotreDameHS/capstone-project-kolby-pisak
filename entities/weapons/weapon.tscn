@@ -8,7 +8,7 @@
 radius = 7.0
 height = 16.0
 
-[node name="Weapon" type="CharacterBody2D" unique_id=1131005498]
+[node name="Weapon" type="CharacterBody2D" unique_id=1131005498 groups=["Player"]]
 script = ExtResource("1_mky6i")
 
 [node name="RotationOffset" type="Node2D" parent="." unique_id=525189103]

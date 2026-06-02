@@ -1,12 +1,14 @@
-extends CharacterBody2D
+extends Area2D
 
 
 var player_pos
 var target_pos
 @export var SPEED := 300.0
 @export var health := 25
+@export var damage := 0.2
 @onready var player = get_parent().get_node("Weapon")
 @onready var health_bar := $HealthBar
+
 
 func _ready() -> void:
 	health_bar.max_value = health
@@ -19,6 +21,10 @@ func _physics_process(delta: float) -> void:
 	
 	if position.distance_to(player_pos) > 3:
 		position += target_pos * SPEED * delta
+		
+	for body in get_overlapping_bodies():
+		if body.is_in_group("Player"):
+			player.player_take_damage(damage)
 
 func take_damage(damage) -> void:
 	health -= damage

@@ -56,4 +56,11 @@ func _shoot():
 func _on_shoot_timer_timeout() -> void:
 	can_shoot = true
 
+func player_take_damage(damage) -> void:
+	if health <= 0:
+		queue_free()
+		
+	health -= damage
+	
+		
 		
