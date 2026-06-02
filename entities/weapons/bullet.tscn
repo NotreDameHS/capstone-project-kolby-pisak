@@ -14,6 +14,7 @@ position = Vector2(-1, 0)
 target_position = Vector2(3, 0)
 collision_mask = 2
 hit_from_inside = true
+collide_with_areas = true
 
 [node name="Timer" type="Timer" parent="." unique_id=249023470]
 wait_time = 10.0

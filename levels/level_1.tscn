@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cij2y18j3cwvt" path="res://levels/level_1.gd" id="1_bt44k"]
 [ext_resource type="Texture2D" uid="uid://looqn5i1c1x6" path="res://assets/textures/kenney_tiny-town/Tilemap/tilemap_packed.png" id="1_vn7o3"]
 [ext_resource type="PackedScene" uid="uid://bk1si7xjb1vuw" path="res://entities/weapons/weapon.tscn" id="2_jirdo"]
+[ext_resource type="PackedScene" uid="uid://bq4ut8pcaify2" path="res://entities/player/player_ui.tscn" id="3_n46q3"]
 [ext_resource type="PackedScene" uid="uid://cycb80uvlej7j" path="res://entities/enemies/base_enemy.tscn" id="4_kx6l7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jirdo"]
@@ -307,6 +308,8 @@ tile_map_data = PackedByteArray("AAAIAAoAAAAAAAAAAAAJAAoAAAAAAAAAAAAAAAEAAAAAAAA
 tile_set = SubResource("TileSet_bt44k")
 
 [node name="Weapon" parent="." unique_id=1061514725 instance=ExtResource("2_jirdo")]
+
+[node name="PlayerUI" parent="Weapon" unique_id=1832775583 instance=ExtResource("3_n46q3")]
 
 [node name="Invisble Wall" type="StaticBody2D" parent="." unique_id=1650718718]
 

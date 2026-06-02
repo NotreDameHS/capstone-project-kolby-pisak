@@ -12,9 +12,12 @@ var can_shoot: bool = true
 
 #Player Variables
 @export var health := 100
+@onready var player_health_bar = $PlayerUI/CanvasLayer/HealthBar
 
 func _ready() -> void:
 	ShootTimer.wait_time = time_between_shot
+	player_health_bar.max_value = 100
+	player_health_bar.value = 100
 	
 func _physics_process(delta: float) -> void:
 	#Player Code
@@ -57,10 +60,11 @@ func _on_shoot_timer_timeout() -> void:
 	can_shoot = true
 
 func player_take_damage(damage) -> void:
-	if health <= 0:
-		queue_free()
-		
 	health -= damage
 	
+	player_health_bar.value -= damage
+	
+	if health <= 0:
+		queue_free()
 		
 		
