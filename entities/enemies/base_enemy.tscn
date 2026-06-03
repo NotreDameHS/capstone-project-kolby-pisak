@@ -22,6 +22,7 @@ corner_radius_bottom_right = 1
 corner_radius_bottom_left = 1
 
 [node name="BaseEnemy" type="Area2D" unique_id=1774130959]
+scale = Vector2(4, 4)
 collision_layer = 2
 script = ExtResource("1_20vb3")
 

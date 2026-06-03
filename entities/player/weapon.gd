@@ -1,18 +1,18 @@
 extends CharacterBody2D
 
-const bullet_scene = preload("res://entities/weapons/bullet.tscn")
-const SPEED = 600.0
 #Weapon Variables
 @onready var RotationOffset = $RotationOffset
 @onready var ShootPos = $RotationOffset/WeaponSprite/ShootPos
 @onready var ShootTimer = $ShootTimer
-
+const bullet_scene = preload("res://entities/weapons/bullet.tscn")
 var time_between_shot: float = 0.25
 var can_shoot: bool = true
+
 
 #Player Variables
 @export var health := 100
 @onready var player_health_bar = $PlayerUI/CanvasLayer/HealthBar
+const player_speed = 600.0
 
 func _ready() -> void:
 	ShootTimer.wait_time = time_between_shot
@@ -25,16 +25,16 @@ func _physics_process(delta: float) -> void:
 	var directionY := Input.get_axis("move_up", "move_down")
 	
 	if directionX:
-		velocity.x = directionX * SPEED
+		velocity.x = directionX * player_speed
 	
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+		velocity.x = move_toward(velocity.x, 0, player_speed)
 	
 	if directionY:
-		velocity.y = directionY * SPEED
+		velocity.y = directionY * player_speed
 		
 	else:
-		velocity.y = move_toward(velocity.x, 0, SPEED)
+		velocity.y = move_toward(velocity.x, 0, player_speed)
 
 	move_and_slide()
 	

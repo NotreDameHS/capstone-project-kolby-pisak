@@ -42,3 +42,12 @@ offset_bottom = 1070.0
 theme_override_font_sizes/font_size = 50
 theme_override_styles/background = SubResource("StyleBoxFlat_3mym1")
 theme_override_styles/fill = SubResource("StyleBoxFlat_o542u")
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=947250151]
+offset_left = 12.0
+offset_top = 946.0
+offset_right = 469.0
+offset_bottom = 988.0
+theme_override_font_sizes/font_size = 35
+text = "Health"
+horizontal_alignment = 1

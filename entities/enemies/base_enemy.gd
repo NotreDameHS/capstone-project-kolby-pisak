@@ -3,7 +3,7 @@ extends Area2D
 
 var player_pos
 var target_pos
-@export var SPEED := 300.0
+@export var enemy_speed := 300.0
 @export var health := 25
 @export var enemy_damage := 1
 @onready var player = get_parent().get_node("Weapon")
@@ -20,7 +20,7 @@ func _physics_process(delta: float) -> void:
 	target_pos = (player_pos - position).normalized()
 	
 	if position.distance_to(player_pos) > 3:
-		position += target_pos * SPEED * delta
+		position += target_pos * enemy_speed * delta
 		
 	for body in get_overlapping_bodies():
 		if body.is_in_group("Player"):
