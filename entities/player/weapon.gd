@@ -10,15 +10,15 @@ var can_shoot: bool = true
 
 
 #Player Variables
-@export var health := 100
+var health :int = GameManager.player_health
 @onready var player_health_bar = $PlayerUI/CanvasLayer/HealthBar
 const player_speed = 600.0
 
 func _ready() -> void:
 	ShootTimer.wait_time = time_between_shot
-	player_health_bar.max_value = 100
-	player_health_bar.value = 100
-	
+	player_health_bar.max_value = health
+	player_health_bar.value = health
+
 func _physics_process(delta: float) -> void:
 	#Player Code
 	var directionX := Input.get_axis("move_left", "move_right")
@@ -47,8 +47,10 @@ func _physics_process(delta: float) -> void:
 		can_shoot = false
 		ShootTimer.start() #Start weapon attack cooldown
 		
-
-		
+	if GameManager.player_xp == GameManager.xp_required:
+		health = GameManager.player_health
+		player_health_bar.max_value = health
+		player_health_bar.value = health
 		
 func _shoot():
 	var new_bullet = bullet_scene.instantiate()
@@ -66,5 +68,4 @@ func player_take_damage(damage) -> void:
 	
 	if health <= 0:
 		queue_free()
-		
 		

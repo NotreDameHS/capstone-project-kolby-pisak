@@ -31,6 +31,8 @@ func take_damage(damage) -> void:
 	health -= damage
 	
 	if health <= 0:
+		GameManager.give_experience()
 		queue_free()
+		
 		
 	health_bar.value -= damage
