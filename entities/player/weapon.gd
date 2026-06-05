@@ -14,6 +14,7 @@ var health :int = GameManager.player_health
 var last_level := 0
 var player_level
 @onready var player_health_bar = $PlayerUI/CanvasLayer/HealthBar
+@onready var player_experience_bar = $PlayerUI/CanvasLayer/ExperienceBar
 const player_speed = 600.0
 
 func _ready() -> void:
@@ -40,14 +41,23 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 	
+	#Sets xp value every tick
+	player_experience_bar.value = GameManager.player_xp
+	#Set current player level every tick
 	player_level = GameManager.current_level
 	
+	#Check is player has leveled up
 	if player_level == last_level + 1:
+		#Makes last level match current level
 		last_level += 1
+		
+		#Sets all UI to match values
+		$PlayerUI/CanvasLayer/LevelLabel.text = "Current Level: "  + str(player_level)
 		health = GameManager.player_health
 		player_health_bar.max_value = health
 		player_health_bar.value = health
-	
+		player_experience_bar.max_value = GameManager.xp_required
+		
 	#Weapon Code
 	#lerp_angle allows smooth rotation of weapon
 	RotationOffset.rotation = lerp_angle(RotationOffset.rotation, ( get_global_mouse_position() - global_position).angle(), 6.5*delta) 
