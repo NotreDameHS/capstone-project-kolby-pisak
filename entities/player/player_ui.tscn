@@ -66,6 +66,7 @@ offset_bottom = 1071.0
 theme_override_font_sizes/font_size = 50
 theme_override_styles/background = SubResource("StyleBoxFlat_3mym1")
 theme_override_styles/fill = SubResource("StyleBoxFlat_o542u")
+show_percentage = false
 
 [node name="ExperienceBar" type="ProgressBar" parent="CanvasLayer" unique_id=1663935937]
 offset_left = 1450.0
@@ -102,3 +103,13 @@ offset_bottom = 49.0
 theme_override_font_sizes/font_size = 35
 text = "Current Level: 0"
 horizontal_alignment = 1
+
+[node name="HealthRemaining" type="Label" parent="CanvasLayer" unique_id=1123049169]
+offset_left = 9.0
+offset_top = 992.0
+offset_right = 470.0
+offset_bottom = 1071.0
+theme_override_font_sizes/font_size = 35
+text = "100/100"
+horizontal_alignment = 1
+vertical_alignment = 1

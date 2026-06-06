@@ -11,10 +11,12 @@ var can_shoot: bool = true
 
 #Player Variables
 var health :int = GameManager.player_health
+var max_health :int = GameManager.player_health
 var last_level := 0
 var player_level
 @onready var player_health_bar = $PlayerUI/CanvasLayer/HealthBar
 @onready var player_experience_bar = $PlayerUI/CanvasLayer/ExperienceBar
+@onready var player_health_remaining = $PlayerUI/CanvasLayer/HealthRemaining
 const player_speed = 600.0
 
 func _ready() -> void:
@@ -54,10 +56,14 @@ func _physics_process(delta: float) -> void:
 		#Sets all UI to match values
 		$PlayerUI/CanvasLayer/LevelLabel.text = "Current Level: "  + str(player_level)
 		health = GameManager.player_health
+		max_health = GameManager.player_health
 		player_health_bar.max_value = health
 		player_health_bar.value = health
+		player_experience_bar.min_value = GameManager.player_xp
 		player_experience_bar.max_value = GameManager.xp_required
 		
+	player_health_remaining.text = str(health) + "/" + str(max_health)
+	
 	#Weapon Code
 	#lerp_angle allows smooth rotation of weapon
 	RotationOffset.rotation = lerp_angle(RotationOffset.rotation, ( get_global_mouse_position() - global_position).angle(), 6.5*delta) 
@@ -80,7 +86,7 @@ func player_take_damage(damage) -> void:
 	health -= damage
 	
 	player_health_bar.value -= damage
-	
+
 	if health <= 0:
 		queue_free()
 		
