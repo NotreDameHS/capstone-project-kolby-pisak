@@ -24,6 +24,28 @@ func _ready() -> void:
 	player_health_bar.max_value = health
 	player_health_bar.value = health
 
+func _process(delta: float) -> void:
+	#Sets xp value
+	player_experience_bar.value = GameManager.player_xp
+	#Set current player level
+	player_level = GameManager.current_level
+	
+	#Check is player has leveled up
+	if player_level == last_level + 1:
+		#Makes last level match current level
+		last_level += 1
+		
+		#Sets all UI to match values
+		$PlayerUI/CanvasLayer/LevelLabel.text = "Current Level: "  + str(player_level)
+		health = GameManager.player_health
+		max_health = GameManager.player_health
+		player_health_bar.max_value = health
+		player_health_bar.value = health
+		player_experience_bar.min_value = GameManager.player_xp
+		player_experience_bar.max_value = GameManager.xp_required
+		
+	player_health_remaining.text = str(health) + "/" + str(max_health)
+
 func _physics_process(delta: float) -> void:
 	#Player Code
 	var directionX := Input.get_axis("move_left", "move_right")
@@ -42,27 +64,6 @@ func _physics_process(delta: float) -> void:
 		velocity.y = move_toward(velocity.x, 0, player_speed)
 
 	move_and_slide()
-	
-	#Sets xp value every tick
-	player_experience_bar.value = GameManager.player_xp
-	#Set current player level every tick
-	player_level = GameManager.current_level
-	
-	#Check is player has leveled up
-	if player_level == last_level + 1:
-		#Makes last level match current level
-		last_level += 1
-		
-		#Sets all UI to match values
-		$PlayerUI/CanvasLayer/LevelLabel.text = "Current Level: "  + str(player_level)
-		health = GameManager.player_health
-		max_health = GameManager.player_health
-		player_health_bar.max_value = health
-		player_health_bar.value = health
-		player_experience_bar.min_value = GameManager.player_xp
-		player_experience_bar.max_value = GameManager.xp_required
-		
-	player_health_remaining.text = str(health) + "/" + str(max_health)
 	
 	#Weapon Code
 	#lerp_angle allows smooth rotation of weapon

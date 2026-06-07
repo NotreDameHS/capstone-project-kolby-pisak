@@ -4,15 +4,16 @@ extends Area2D
 var player_pos
 var target_pos
 @export var enemy_speed := 300.0
-@export var health := 25
+@export var health_multiple := 1
 @export var enemy_damage := 1
 @onready var player = get_parent().get_node("Weapon")
 @onready var health_bar := $HealthBar
+var enemy_health = GameManager.mob_health * health_multiple
 
 
 func _ready() -> void:
-	health_bar.max_value = health
-	health_bar.value = health
+	health_bar.max_value = enemy_health
+	health_bar.value = enemy_health
 
 func _physics_process(delta: float) -> void:
 	#Sets variables here so that they can update every tick
@@ -28,9 +29,9 @@ func _physics_process(delta: float) -> void:
 
 func take_damage(damage) -> void:
 	print("damage")
-	health -= damage
+	enemy_health -= damage
 	
-	if health <= 0:
+	if enemy_health <= 0:
 		GameManager.give_experience()
 		queue_free()
 		

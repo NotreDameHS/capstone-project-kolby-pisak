@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://cycb80uvlej7j"]
 
 [ext_resource type="Script" uid="uid://dh2q63a3f7r0x" path="res://entities/enemies/base_enemy.gd" id="1_20vb3"]
-[ext_resource type="Texture2D" uid="uid://dlg3bn52uwjc" path="res://assets/textures/Enemies/Base Enemy.png" id="2_nwpjw"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nwpjw"]
 radius = 8.0
@@ -32,7 +31,6 @@ shape = SubResource("CapsuleShape2D_nwpjw")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=402550716]
 texture_filter = 1
-texture = ExtResource("2_nwpjw")
 
 [node name="HealthBar" type="ProgressBar" parent="." unique_id=368831279]
 offset_left = -6.0
