@@ -32,6 +32,7 @@ func _physics_process(delta: float) -> void:
 	for body in get_overlapping_bodies():
 		if body.is_in_group("Player"):
 			player.player_take_damage(enemy_damage)
+		
 
 func take_damage(damage) -> void:
 	print("damage")

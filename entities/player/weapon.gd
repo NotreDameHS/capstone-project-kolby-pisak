@@ -24,7 +24,7 @@ func _ready() -> void:
 	player_health_bar.max_value = health
 	player_health_bar.value = health
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	#Sets xp value
 	player_experience_bar.value = GameManager.player_xp
 	#Set current player level
