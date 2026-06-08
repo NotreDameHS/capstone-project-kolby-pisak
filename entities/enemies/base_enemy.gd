@@ -3,15 +3,21 @@ extends Area2D
 
 var player_pos
 var target_pos
-@export var enemy_speed := 300.0
-@export var health_multiple := 1
-@export var enemy_damage := 1
+var enemy_health
+var enemy_speed
+var enemy_damage
+@export var speed_multiple := 1.0
+@export var health_multiple := 1.0
+@export var damage_multiple := 1.0
 @onready var player = get_parent().get_node("Weapon")
 @onready var health_bar := $HealthBar
-var enemy_health = GameManager.mob_health * health_multiple
+
 
 
 func _ready() -> void:
+	enemy_health = GameManager.mob_health * health_multiple
+	enemy_speed = GameManager.mob_speed * speed_multiple
+	enemy_damage = GameManager.mob_damage * damage_multiple
 	health_bar.max_value = enemy_health
 	health_bar.value = enemy_health
 

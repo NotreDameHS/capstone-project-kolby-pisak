@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://ce6ktg8ylubdr"]
+
+[ext_resource type="PackedScene" uid="uid://cycb80uvlej7j" path="res://entities/enemies/base_enemy.tscn" id="1_l7th3"]
+[ext_resource type="Texture2D" uid="uid://byrbn5heq42ar" path="res://assets/textures/Enemies/Enemy2.png" id="2_i37b8"]
+
+[node name="Enemy2" unique_id=1774130959 groups=["Enemy"] instance=ExtResource("1_l7th3")]
+speed_multiple = 1.5
+health_multiple = 1.5
+damage_multiple = 1.5
+
+[node name="Sprite2D" parent="." index="1" unique_id=402550716]
+texture = ExtResource("2_i37b8")
