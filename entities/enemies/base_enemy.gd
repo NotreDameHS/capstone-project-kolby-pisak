@@ -9,6 +9,7 @@ var enemy_damage
 @export var speed_multiple := 1.0
 @export var health_multiple := 1.0
 @export var damage_multiple := 1.0
+@export var experience_given := 1
 @onready var player = get_parent().get_node("Weapon")
 @onready var health_bar := $HealthBar
 
@@ -39,8 +40,7 @@ func take_damage(damage) -> void:
 	enemy_health -= damage
 	
 	if enemy_health <= 0:
-		GameManager.give_experience()
+		GameManager.give_experience(experience_given)
 		queue_free()
-		
 		
 	health_bar.value -= damage

@@ -7,6 +7,7 @@
 speed_multiple = 1.5
 health_multiple = 1.5
 damage_multiple = 1.5
+experience_given = 2
 
 [node name="Sprite2D" parent="." index="1" unique_id=402550716]
 texture = ExtResource("2_i37b8")

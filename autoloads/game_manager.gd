@@ -17,11 +17,11 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 	
-func give_experience() -> void:
+func give_experience(xp_given) -> void:
 	enemies_killed += 1
-	player_xp += 1
+	player_xp += xp_given
 	
-	if player_xp == xp_required:
+	if player_xp >= xp_required:
 		player_health += 10
 		xp_required *= 2
 		current_level += 1
