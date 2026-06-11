@@ -61,13 +61,13 @@ func _on_timer_timeout() -> void:
 	if mobs_v1_spawned < mobs_v1_per_round:
 		spawn_enemy_one()
 	
-	if GameManager.round == 3:
+	if GameManager.round_number == 3:
 		mobs_v2_per_round = 3
 		
 	if mobs_v2_spawned < mobs_v2_per_round:
 		spawn_enemy_two()
 	
-	if GameManager.round == 5:
+	if GameManager.round_number == 5:
 		mobs_v3_per_round = 1
 	
 	if mobs_v3_spawned < mobs_v3_per_round:
@@ -81,10 +81,10 @@ func _on_timer_timeout() -> void:
 		mobs_v1_per_round += 5
 		mobs_v2_spawned = 0
 		
-		if GameManager.round > 3:
+		if GameManager.round_number > 3:
 			mobs_v2_per_round += 3
 			
-		if GameManager.round > 5:
+		if GameManager.round_number > 5:
 			mobs_v3_per_round += 1
 				
 		await get_tree().create_timer(5.0).timeout
