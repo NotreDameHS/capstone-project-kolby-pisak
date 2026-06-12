@@ -1,7 +1,7 @@
 extends Sprite2D
 
 @onready var RayCast: RayCast2D = $RayCast2D
-@export var damage = 13
+var damage = GameManager.player_damage
 var speed: float = 1000
 
 func _physics_process(delta: float) -> void:

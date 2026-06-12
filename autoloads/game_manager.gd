@@ -3,6 +3,7 @@ var player_xp := 0
 var xp_required := 2
 var enemies_killed := 0
 var player_health := 100.0
+var player_damage := 13.0
 var player_movement_speed := 600.0
 var shoot_time := 0.25
 var current_level := 0

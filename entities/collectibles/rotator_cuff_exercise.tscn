@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://btkw0whtdg4c1"]
+
+[ext_resource type="PackedScene" uid="uid://bu2w2vmtjnii1" path="res://entities/collectibles/base_item.tscn" id="1_hrg7f"]
+
+[node name="RotatorCuffExercise" unique_id=2070431860 instance=ExtResource("1_hrg7f")]
+rotation_speed_multiple = 1.25

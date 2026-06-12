@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bnuuj4ex2ro4d"]
+
+[ext_resource type="PackedScene" uid="uid://bu2w2vmtjnii1" path="res://entities/collectibles/base_item.tscn" id="1_3nvel"]
+
+[node name="MassGainer" unique_id=2070431860 instance=ExtResource("1_3nvel")]
+health_multiple = 1.25

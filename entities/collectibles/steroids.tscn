@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cuc650ogyp6uv"]
+
+[ext_resource type="PackedScene" uid="uid://bu2w2vmtjnii1" path="res://entities/collectibles/base_item.tscn" id="1_1e0hr"]
+
+[node name="Steroids" unique_id=2070431860 instance=ExtResource("1_1e0hr")]
+damage_multiple = 1.25
