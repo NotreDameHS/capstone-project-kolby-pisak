@@ -12,16 +12,18 @@ var can_shoot: bool = true
 #Player Variables
 var health :float = GameManager.player_health
 var max_health :float = GameManager.player_health
+var turn_rate := GameManager.rotation_speed
 var last_level := 0
 var player_level
 @onready var player_health_bar = $PlayerUI/CanvasLayer/HealthBar
 @onready var player_experience_bar = $PlayerUI/CanvasLayer/ExperienceBar
 @onready var player_health_remaining = $PlayerUI/CanvasLayer/HealthRemaining
 var player_speed = GameManager.player_movement_speed
+const level_up := preload("res://ui/level_up_ui.tscn")
 
 func _ready() -> void:
 	ShootTimer.wait_time = time_between_shot
-	player_health_bar.max_value = health
+	player_health_bar.max_value = max_health
 	player_health_bar.value = health
 
 func _process(_delta: float) -> void:
@@ -39,10 +41,12 @@ func _process(_delta: float) -> void:
 		$PlayerUI/CanvasLayer/LevelLabel.text = "Current Level: "  + str(player_level)
 		health = GameManager.player_health
 		max_health = GameManager.player_health
-		player_health_bar.max_value = health
+		player_health_bar.max_value = max_health
 		player_health_bar.value = health
 		player_experience_bar.min_value = GameManager.player_xp
 		player_experience_bar.max_value = GameManager.xp_required
+		var item_instance = level_up.instantiate()
+		add_child(item_instance)
 		
 	player_health_remaining.text = str(int(health)) + "/" + str(int(max_health))
 	$PlayerUI/CanvasLayer/RoundLabel.text = "Current Round: "  + str(GameManager.round_number)
@@ -57,7 +61,7 @@ func _physics_process(delta: float) -> void:
 	
 	#Weapon Code
 	#lerp_angle allows smooth rotation of weapon
-	RotationOffset.rotation = lerp_angle(RotationOffset.rotation, ( get_global_mouse_position() - global_position).angle(), GameManager.rotation_speed*delta) 
+	RotationOffset.rotation = lerp_angle(RotationOffset.rotation, ( get_global_mouse_position() - global_position).angle(), turn_rate*delta) 
 	
 	if Input.is_action_just_pressed("shoot") and can_shoot: #Checks if weapon can attack
 		_shoot()
@@ -81,3 +85,11 @@ func player_take_damage(damage) -> void:
 	if health <= 0:
 		queue_free()
 		
+func change_stats() -> void:
+	player_speed = GameManager.player_movement_speed
+	max_health = GameManager.player_health
+	turn_rate = GameManager.rotation_speed
+	player_speed = GameManager.player_movement_speed
+	time_between_shot = GameManager.shoot_time
+	ShootTimer.wait_time = time_between_shot
+	player_health_bar.max_value = max_health

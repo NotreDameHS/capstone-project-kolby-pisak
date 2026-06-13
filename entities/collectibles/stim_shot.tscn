@@ -3,4 +3,5 @@
 [ext_resource type="PackedScene" uid="uid://bu2w2vmtjnii1" path="res://entities/collectibles/base_item.tscn" id="1_llhhn"]
 
 [node name="StimShot" unique_id=2070431860 instance=ExtResource("1_llhhn")]
-rotation_speed_increase = 10.0
+description = "Increases rotation speed by 1."
+rotation_speed_increase = 1.0

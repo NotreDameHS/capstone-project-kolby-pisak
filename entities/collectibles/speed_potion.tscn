@@ -3,4 +3,5 @@
 [ext_resource type="PackedScene" uid="uid://bu2w2vmtjnii1" path="res://entities/collectibles/base_item.tscn" id="1_011xq"]
 
 [node name="SpeedPotion" unique_id=2070431860 instance=ExtResource("1_011xq")]
+description = "Increases movement speed by 25%."
 movement_speed_multiple = 1.25

@@ -1,4 +1,5 @@
 extends Node2D
+@export var description := ""
 @export var health_increase := 0.0
 @export var movement_speed_increase := 0.0
 @export var rotation_speed_increase := 0.0

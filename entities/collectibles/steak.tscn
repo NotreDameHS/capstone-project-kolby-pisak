@@ -3,4 +3,5 @@
 [ext_resource type="PackedScene" uid="uid://bu2w2vmtjnii1" path="res://entities/collectibles/base_item.tscn" id="1_sfotf"]
 
 [node name="Steak" unique_id=2070431860 instance=ExtResource("1_sfotf")]
+description = "Increases health by 10."
 health_increase = 10.0

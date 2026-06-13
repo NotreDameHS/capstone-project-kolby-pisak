@@ -80,6 +80,7 @@ func _on_timer_timeout() -> void:
 		mobs_v1_spawned = 0
 		mobs_v1_per_round += 5
 		mobs_v2_spawned = 0
+		mobs_v3_spawned = 0
 		
 		if GameManager.round_number > 3:
 			mobs_v2_per_round += 3
