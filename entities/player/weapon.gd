@@ -43,10 +43,11 @@ func _process(_delta: float) -> void:
 		max_health = GameManager.player_health
 		player_health_bar.max_value = max_health
 		player_health_bar.value = health
-		player_experience_bar.min_value = GameManager.player_xp
+		player_experience_bar.min_value = GameManager.last_xp_required
 		player_experience_bar.max_value = GameManager.xp_required
 		var item_instance = level_up.instantiate()
-		add_child(item_instance)
+		if has_node("LevelUpUI") == false:
+			add_child(item_instance)
 		
 	player_health_remaining.text = str(int(health)) + "/" + str(int(max_health))
 	$PlayerUI/CanvasLayer/RoundLabel.text = "Current Round: "  + str(GameManager.round_number)
@@ -84,7 +85,7 @@ func player_take_damage(damage) -> void:
 	player_health_bar.value -= damage
 
 	if health <= 0:
-		queue_free()
+		GameManager.game_over()
 		
 func change_stats() -> void:
 	player_speed = GameManager.player_movement_speed

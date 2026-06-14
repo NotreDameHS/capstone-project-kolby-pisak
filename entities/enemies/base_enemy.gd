@@ -27,7 +27,7 @@ func _physics_process(delta: float) -> void:
 	player_pos = player.position 
 	target_pos = (player_pos - position).normalized()
 	
-	if position.distance_to(player_pos) > 3:
+	if position.distance_to(player_pos) > 60:
 		position += target_pos * enemy_speed * delta
 		
 	for body in get_overlapping_bodies():
