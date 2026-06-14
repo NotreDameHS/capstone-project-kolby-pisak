@@ -1,7 +1,16 @@
 [gd_scene format=3 uid="uid://bo0eqnslk2sui"]
 
 [ext_resource type="PackedScene" uid="uid://bu2w2vmtjnii1" path="res://entities/collectibles/base_item.tscn" id="1_emtl0"]
+[ext_resource type="Texture2D" uid="uid://bpe6mmaqomyxu" path="res://assets/textures/Items/trigger-finger.png" id="2_3ybvk"]
+[ext_resource type="Texture2D" uid="uid://dcnki24kabd5j" path="res://assets/textures/Items/trigger-finger-pressed.png" id="3_pv1f2"]
 
 [node name="TriggerFinger" unique_id=2070431860 instance=ExtResource("1_emtl0")]
+item_name = "Trigger Finger"
 description = "Decreases time between shots by 25%."
 fire_rate_multiple = 0.75
+
+[node name="normal" parent="." index="0" unique_id=820425593]
+texture = ExtResource("2_3ybvk")
+
+[node name="pressed" parent="." index="1" unique_id=685735083]
+texture = ExtResource("3_pv1f2")

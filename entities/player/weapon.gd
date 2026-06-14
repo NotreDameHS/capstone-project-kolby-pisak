@@ -50,6 +50,7 @@ func _process(_delta: float) -> void:
 		
 	player_health_remaining.text = str(int(health)) + "/" + str(int(max_health))
 	$PlayerUI/CanvasLayer/RoundLabel.text = "Current Round: "  + str(GameManager.round_number)
+	$PlayerUI/CanvasLayer/EnemyLabel.text = "Enemies Killed: "  + str(GameManager.enemies_killed)
 	
 func _physics_process(delta: float) -> void:
 	#Player Code

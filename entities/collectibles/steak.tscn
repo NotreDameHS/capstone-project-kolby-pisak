@@ -1,7 +1,16 @@
 [gd_scene format=3 uid="uid://dumbe60dss5ko"]
 
 [ext_resource type="PackedScene" uid="uid://bu2w2vmtjnii1" path="res://entities/collectibles/base_item.tscn" id="1_sfotf"]
+[ext_resource type="Texture2D" uid="uid://bnapth5cobt7i" path="res://assets/textures/Items/steak.png" id="2_es46l"]
+[ext_resource type="Texture2D" uid="uid://ctigh7o4bb4mi" path="res://assets/textures/Items/steak-pressed.png" id="3_p5x62"]
 
 [node name="Steak" unique_id=2070431860 instance=ExtResource("1_sfotf")]
+item_name = "Steak"
 description = "Increases health by 10."
 health_increase = 10.0
+
+[node name="normal" parent="." index="0" unique_id=820425593]
+texture = ExtResource("2_es46l")
+
+[node name="pressed" parent="." index="1" unique_id=685735083]
+texture = ExtResource("3_p5x62")

@@ -37,14 +37,26 @@ offset_right = 770.0
 offset_bottom = 250.0
 grow_vertical = 2
 
+[node name="NameLabel" type="Label" parent="CanvasLayer/VBoxContainer" unique_id=199748532]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
 [node name="Button" type="TextureButton" parent="CanvasLayer/VBoxContainer" unique_id=1029669252]
+texture_filter = 1
 custom_minimum_size = Vector2(265, 265)
 layout_mode = 2
+stretch_mode = 0
 
 [node name="Label" type="Label" parent="CanvasLayer/VBoxContainer" unique_id=1589515047]
-custom_minimum_size = Vector2(0, 269)
+custom_minimum_size = Vector2(0, 237)
 layout_mode = 2
+theme_override_font_sizes/font_size = 30
 horizontal_alignment = 1
+autowrap_mode = 2
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="CanvasLayer" unique_id=1282524552]
 anchors_preset = 4
@@ -56,14 +68,26 @@ offset_right = 1092.5
 offset_bottom = 250.0
 grow_vertical = 2
 
+[node name="NameLabel" type="Label" parent="CanvasLayer/VBoxContainer2" unique_id=1950389027]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
 [node name="Button2" type="TextureButton" parent="CanvasLayer/VBoxContainer2" unique_id=792323356]
+texture_filter = 1
 custom_minimum_size = Vector2(265, 265)
 layout_mode = 2
+stretch_mode = 0
 
 [node name="Label" type="Label" parent="CanvasLayer/VBoxContainer2" unique_id=1719058088]
-custom_minimum_size = Vector2(0, 269)
+custom_minimum_size = Vector2(0, 237)
 layout_mode = 2
+theme_override_font_sizes/font_size = 30
 horizontal_alignment = 1
+autowrap_mode = 2
 
 [node name="VBoxContainer3" type="VBoxContainer" parent="CanvasLayer" unique_id=1463351519]
 anchors_preset = 4
@@ -75,6 +99,14 @@ offset_right = 1415.0
 offset_bottom = 250.0
 grow_vertical = 2
 
+[node name="NameLabel" type="Label" parent="CanvasLayer/VBoxContainer3" unique_id=2125365581]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
 [node name="Button3" type="TextureButton" parent="CanvasLayer/VBoxContainer3" unique_id=1997927149]
 texture_filter = 1
 custom_minimum_size = Vector2(265, 265)
@@ -83,9 +115,11 @@ ignore_texture_size = true
 stretch_mode = 0
 
 [node name="Label" type="Label" parent="CanvasLayer/VBoxContainer3" unique_id=1100923567]
-custom_minimum_size = Vector2(0, 269)
+custom_minimum_size = Vector2(0, 237)
 layout_mode = 2
+theme_override_font_sizes/font_size = 30
 horizontal_alignment = 1
+autowrap_mode = 2
 
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/VBoxContainer2/Button2" to="." method="_on_button_2_pressed"]

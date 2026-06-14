@@ -6,7 +6,7 @@ preload("res://entities/collectibles/pills.tscn"),
 preload("res://entities/collectibles/speed_potion.tscn"),
 preload("res://entities/collectibles/steak.tscn"),
 preload("res://entities/collectibles/steroids.tscn"),
-preload("res://entities/collectibles/stim_shot.tscn"),
+preload("res://entities/collectibles/stim.tscn"),
 preload("res://entities/collectibles/trigger_finger.tscn")]
 	
 var item1 :Node2D = item_scenes.pick_random().instantiate()
@@ -19,15 +19,20 @@ var item3 :Node2D = item_scenes.pick_random().instantiate()
 @onready var button3 := $CanvasLayer/VBoxContainer3/Button3
 
 func _ready() -> void:
-	button1.texture_normal = item1.get_node("normal")
-	button1.texture_pressed = item1.get_node("pressed")
-	button2.texture_normal = item2.get_node("normal")
-	button2.texture_pressed = item2.get_node("pressed")		
-	button3.texture_normal = item3.get_node("normal")
-	button3.texture_pressed = item3.get_node("pressed")
+	button1.texture_normal = item1.get_node("normal").texture
+	button1.texture_pressed = item1.get_node("pressed").texture
+	button2.texture_normal = item2.get_node("normal").texture
+	button2.texture_pressed = item2.get_node("pressed").texture
+	button3.texture_normal = item3.get_node("normal").texture
+	button3.texture_pressed = item3.get_node("pressed").texture
 	$CanvasLayer/VBoxContainer/Label.text = item1.description
 	$CanvasLayer/VBoxContainer2/Label.text = item2.description
 	$CanvasLayer/VBoxContainer3/Label.text = item3.description
+	$CanvasLayer/VBoxContainer/NameLabel.text = item1.item_name
+	$CanvasLayer/VBoxContainer2/NameLabel.text = item2.item_name
+	$CanvasLayer/VBoxContainer3/NameLabel.text = item3.item_name
+	
+	
 	
 func _on_button_pressed() -> void:
 	GameManager.player_health += item1.health_increase

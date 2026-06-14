@@ -1,7 +1,16 @@
 [gd_scene format=3 uid="uid://bnuuj4ex2ro4d"]
 
 [ext_resource type="PackedScene" uid="uid://bu2w2vmtjnii1" path="res://entities/collectibles/base_item.tscn" id="1_3nvel"]
+[ext_resource type="Texture2D" uid="uid://ctas5oy74omqx" path="res://assets/textures/Items/mass-gainer.png" id="2_vlmgx"]
+[ext_resource type="Texture2D" uid="uid://b4n4xvgt4pry8" path="res://assets/textures/Items/mass-gainer-pressed.png" id="3_gdtou"]
 
 [node name="MassGainer" unique_id=2070431860 instance=ExtResource("1_3nvel")]
+item_name = "Mass Gainer"
 description = "Increases health by 25%."
 health_multiple = 1.25
+
+[node name="normal" parent="." index="0" unique_id=820425593]
+texture = ExtResource("2_vlmgx")
+
+[node name="pressed" parent="." index="1" unique_id=685735083]
+texture = ExtResource("3_gdtou")

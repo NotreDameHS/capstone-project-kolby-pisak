@@ -1,7 +1,16 @@
 [gd_scene format=3 uid="uid://bh1wijvvk0jtk"]
 
 [ext_resource type="PackedScene" uid="uid://bu2w2vmtjnii1" path="res://entities/collectibles/base_item.tscn" id="1_4nbpw"]
+[ext_resource type="Texture2D" uid="uid://du5ju7o8mqpg6" path="res://assets/textures/Items/creatine.png" id="2_cyrqj"]
+[ext_resource type="Texture2D" uid="uid://dby01ia5c0mji" path="res://assets/textures/Items/creatine-pressed.png" id="3_tgnes"]
 
 [node name="Creatine" unique_id=2070431860 instance=ExtResource("1_4nbpw")]
+item_name = "Creatine"
 description = "Increase damage dealt by 2."
 damage_increase = 2.0
+
+[node name="normal" parent="." index="0" unique_id=820425593]
+texture = ExtResource("2_cyrqj")
+
+[node name="pressed" parent="." index="1" unique_id=685735083]
+texture = ExtResource("3_tgnes")
